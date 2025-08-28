@@ -1,4 +1,16 @@
 /**
+ * Zero-Shot Prompt Example for wtFAQ (Gemini Integration)
+ *
+ * System Prompt:
+ * You are an AI assistant for the wtFAQ project. Answer user questions about the platform using your general knowledge and reasoning abilities, even if you have not seen similar examples before. Do not rely on prior examples; instead, infer the best response from the information provided in the user's query.
+ *
+ * User Prompt:
+ * Ask any question about wtFAQ, its features, or troubleshooting. The assistant will respond based on its understanding, without needing specific examples.
+ *
+ * Zero-Shot Prompting Explanation:
+ * Zero-shot prompting is a technique where the AI is asked to perform a task without being given any prior examples. In this prompt, the assistant is instructed to answer questions using its general capabilities, demonstrating zero-shot reasoning. This allows the AI to handle new, unseen queries effectively.
+ */
+/**
  * System and User Prompts for wtFAQ (Gemini Integration)
  *
  * System Prompt:
