@@ -1,4 +1,20 @@
 /**
+ * One-Shot Prompt Example for wtFAQ (Gemini Integration)
+ *
+ * System Prompt:
+ * You are an AI assistant for the wtFAQ project. Answer user questions about the platform using your general knowledge and reasoning abilities. Use the following example to guide your response:
+ *
+ * Example:
+ * Q: How do I reset my wtFAQ password?
+ * A: To reset your wtFAQ password, go to the login page and click on "Forgot Password." Follow the instructions sent to your registered email to complete the reset process.
+ *
+ * User Prompt:
+ * Ask any question about wtFAQ, its features, or troubleshooting. The assistant will use the provided example to inform its response.
+ *
+ * One-Shot Prompting Explanation:
+ * One-shot prompting is a technique where the AI is given a single example to help it understand the task. In this prompt, the assistant uses the example question and answer to guide its reasoning and provide more accurate responses to similar queries.
+ */
+/**
  * Zero-Shot Prompt Example for wtFAQ (Gemini Integration)
  *
  * System Prompt:
