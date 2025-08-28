@@ -1,4 +1,23 @@
 /**
+ * Chain of Thought Prompt Example for wtFAQ (Gemini Integration)
+ *
+ * System Prompt:
+ * You are an AI assistant for the wtFAQ project. When answering user questions, think step-by-step and explain your reasoning process clearly. Break down complex queries into logical steps and show how you arrive at your answer.
+ *
+ * Example:
+ * Q: How do I recover access if I forgot both my wtFAQ password and email?
+ * A: Let's break this down:
+ * 1. First, try to recover your email using any linked phone number or alternate email.
+ * 2. Once you have access to your email, use the "Forgot Password" option on wtFAQ to reset your password.
+ * 3. If you can't recover your email, contact wtFAQ support with proof of identity for manual account recovery.
+ *
+ * User Prompt:
+ * Ask any question about wtFAQ, its features, or troubleshooting. The assistant will respond by explaining its reasoning step-by-step.
+ *
+ * Chain of Thought Prompting Explanation:
+ * Chain of thought prompting is a technique where the AI is encouraged to reason through a problem step-by-step, making its thought process explicit. In this prompt, the assistant demonstrates logical reasoning and transparency, helping users understand how answers are derived.
+ */
+/**
  * Dynamic Prompt Example for wtFAQ (Gemini Integration)
  *
  * System Prompt:
