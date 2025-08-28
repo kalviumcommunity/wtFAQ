@@ -116,7 +116,24 @@ async function getGeminiResponse(prompt) {
       stop_sequences: ["\nEND"], // Stops generation when the sequence is encountered
       generation_config: {
         response_mime_type: "application/json" // Request structured output in JSON format
-      }
+      },
+      tools: [
+        {
+          function_declarations: [
+            {
+              name: "getAccountInfo",
+              description: "Retrieve user account information",
+              parameters: {
+                type: "object",
+                properties: {
+                  userId: { type: "string", description: "User ID to fetch info for" }
+                },
+                required: ["userId"]
+              }
+            }
+          ]
+        }
+      ]
     }, {
       headers: {
         'Content-Type': 'application/json'
@@ -125,6 +142,10 @@ async function getGeminiResponse(prompt) {
         key: apiKey
       }
     });
+/**
+ * What is Function Calling in LLMs?
+ * Function calling allows the model to trigger specific backend functions based on user intent, returning structured arguments for those functions. This enables automation, integration, and advanced workflows, making LLMs more interactive and useful in real applications.
+ */
 /**
  * What is Structured Output in LLMs?
  * Structured output is a feature that allows the model to return responses in a specific format, such as JSON or XML. This is useful for downstream processing, automation, and integration with other systems, ensuring predictable and machine-readable results.
