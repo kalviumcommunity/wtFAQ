@@ -109,7 +109,8 @@ const axios = require('axios');
 async function getGeminiResponse(prompt) {
   try {
     const response = await axios.post('https://generativelanguage.googleapis.com/v1beta2/models/gemini-pro:generateContent', {
-      contents: [{ parts: [{ text: prompt }] }]
+      contents: [{ parts: [{ text: prompt }] }],
+      temperature: 0.7 // Controls randomness/creativity of output
     }, {
       headers: {
         'Content-Type': 'application/json'
@@ -118,6 +119,10 @@ async function getGeminiResponse(prompt) {
         key: apiKey
       }
     });
+/**
+ * What is temperature in LLMs?
+ * Temperature is a parameter that controls the randomness and creativity of AI-generated responses. Lower values (e.g., 0.2) make outputs more focused and deterministic, while higher values (e.g., 0.8) make outputs more diverse and creative.
+ */
     // Token counting: 1 token ≈ 4 characters (rough estimate)
     const tokenCount = Math.ceil(prompt.length / 4);
     console.log(`Tokens used in prompt: ${tokenCount}`);
