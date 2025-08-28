@@ -111,7 +111,8 @@ async function getGeminiResponse(prompt) {
     const response = await axios.post('https://generativelanguage.googleapis.com/v1beta2/models/gemini-pro:generateContent', {
       contents: [{ parts: [{ text: prompt }] }],
       temperature: 0.7, // Controls randomness/creativity of output
-      top_p: 0.8 // Controls diversity by sampling from the top probability mass
+      top_p: 0.8, // Controls diversity by sampling from the top probability mass
+      top_k: 40 // Controls diversity by sampling from the top K most likely tokens
     }, {
       headers: {
         'Content-Type': 'application/json'
@@ -120,6 +121,10 @@ async function getGeminiResponse(prompt) {
         key: apiKey
       }
     });
+/**
+ * What is Top K in LLMs?
+ * Top K is a parameter that controls diversity in AI-generated responses. The model considers only the top K most likely tokens for each step, making outputs more focused or more creative depending on the value. Higher K allows more possible tokens, increasing diversity.
+ */
 /**
  * What is Top P in LLMs?
  * Top P (nucleus sampling) is a parameter that controls diversity in AI-generated responses. The model considers only the most probable tokens whose cumulative probability is at least Top P (e.g., 0.8), making outputs more focused or more creative depending on the value.
