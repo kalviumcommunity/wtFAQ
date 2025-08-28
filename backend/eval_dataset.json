@@ -1,0 +1,22 @@
+[
+  {
+    "input": "How do I reset my wtFAQ password?",
+    "expected": "To reset your wtFAQ password, go to the login page and click on 'Forgot Password.' Follow the instructions sent to your registered email to complete the reset process."
+  },
+  {
+    "input": "How do I change my email address in wtFAQ?",
+    "expected": "Go to your account settings, select 'Edit Profile,' and update your email information. Save the changes to apply them."
+  },
+  {
+    "input": "How do I delete my wtFAQ account?",
+    "expected": "Visit the account settings page, scroll down to 'Delete Account,' and follow the confirmation steps."
+  },
+  {
+    "input": "What is wtFAQ used for?",
+    "expected": "wtFAQ is a platform for managing frequently asked questions and providing support to users."
+  },
+  {
+    "input": "How do I contact support in wtFAQ?",
+    "expected": "You can contact support by visiting the 'Help' section and submitting a support request or emailing support@wtfaq.com."
+  }
+]
