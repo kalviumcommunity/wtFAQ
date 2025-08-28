@@ -113,7 +113,10 @@ async function getGeminiResponse(prompt) {
       temperature: 0.7, // Controls randomness/creativity of output
       top_p: 0.8, // Controls diversity by sampling from the top probability mass
       top_k: 40, // Controls diversity by sampling from the top K most likely tokens
-      stop_sequences: ["\nEND"] // Stops generation when the sequence is encountered
+      stop_sequences: ["\nEND"], // Stops generation when the sequence is encountered
+      generation_config: {
+        response_mime_type: "application/json" // Request structured output in JSON format
+      }
     }, {
       headers: {
         'Content-Type': 'application/json'
@@ -122,6 +125,10 @@ async function getGeminiResponse(prompt) {
         key: apiKey
       }
     });
+/**
+ * What is Structured Output in LLMs?
+ * Structured output is a feature that allows the model to return responses in a specific format, such as JSON or XML. This is useful for downstream processing, automation, and integration with other systems, ensuring predictable and machine-readable results.
+ */
 /**
  * What is Stop Sequence in LLMs?
  * Stop sequence is a parameter that tells the model to stop generating text when a specific sequence of characters is encountered. This is useful for controlling output boundaries and preventing unwanted text generation beyond a certain point.
