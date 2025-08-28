@@ -110,7 +110,8 @@ async function getGeminiResponse(prompt) {
   try {
     const response = await axios.post('https://generativelanguage.googleapis.com/v1beta2/models/gemini-pro:generateContent', {
       contents: [{ parts: [{ text: prompt }] }],
-      temperature: 0.7 // Controls randomness/creativity of output
+      temperature: 0.7, // Controls randomness/creativity of output
+      top_p: 0.8 // Controls diversity by sampling from the top probability mass
     }, {
       headers: {
         'Content-Type': 'application/json'
@@ -119,6 +120,10 @@ async function getGeminiResponse(prompt) {
         key: apiKey
       }
     });
+/**
+ * What is Top P in LLMs?
+ * Top P (nucleus sampling) is a parameter that controls diversity in AI-generated responses. The model considers only the most probable tokens whose cumulative probability is at least Top P (e.g., 0.8), making outputs more focused or more creative depending on the value.
+ */
 /**
  * What is temperature in LLMs?
  * Temperature is a parameter that controls the randomness and creativity of AI-generated responses. Lower values (e.g., 0.2) make outputs more focused and deterministic, while higher values (e.g., 0.8) make outputs more diverse and creative.
