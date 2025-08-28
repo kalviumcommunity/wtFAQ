@@ -118,6 +118,13 @@ async function getGeminiResponse(prompt) {
         key: apiKey
       }
     });
+    // Token counting: 1 token ≈ 4 characters (rough estimate)
+    const tokenCount = Math.ceil(prompt.length / 4);
+    console.log(`Tokens used in prompt: ${tokenCount}`);
+    // If Gemini API returns token usage, log it as well
+    if (response.data.usage && response.data.usage.total_tokens) {
+      console.log(`Tokens used (API reported): ${response.data.usage.total_tokens}`);
+    }
     return response.data;
   } catch (error) {
     console.error('Gemini API error:', error.response ? error.response.data : error.message);
@@ -127,3 +134,8 @@ async function getGeminiResponse(prompt) {
 
 // Example usage
 getGeminiResponse('Hello, Gemini!').then(console.log);
+
+/**
+ * What are tokens?
+ * Tokens are units of text (words or parts of words) used by AI models to process and generate language. Each prompt and response is broken down into tokens, and the number of tokens affects cost, speed, and context length in AI calls.
+ */
