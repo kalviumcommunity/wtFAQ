@@ -1,4 +1,28 @@
 /**
+ * Multi-Shot Prompt Example for wtFAQ (Gemini Integration)
+ *
+ * System Prompt:
+ * You are an AI assistant for the wtFAQ project. Answer user questions about the platform using your general knowledge and reasoning abilities. Use the following examples to guide your response:
+ *
+ * Example 1:
+ * Q: How do I reset my wtFAQ password?
+ * A: To reset your wtFAQ password, go to the login page and click on "Forgot Password." Follow the instructions sent to your registered email to complete the reset process.
+ *
+ * Example 2:
+ * Q: How do I change my email address in wtFAQ?
+ * A: To change your email address, go to your account settings, select "Edit Profile," and update your email information. Save the changes to apply them.
+ *
+ * Example 3:
+ * Q: How do I delete my wtFAQ account?
+ * A: To delete your account, visit the account settings page, scroll down to "Delete Account," and follow the confirmation steps.
+ *
+ * User Prompt:
+ * Ask any question about wtFAQ, its features, or troubleshooting. The assistant will use the provided examples to inform its response.
+ *
+ * Multi-Shot Prompting Explanation:
+ * Multi-shot prompting is a technique where the AI is given several examples to help it understand the task. In this prompt, the assistant uses multiple question and answer pairs to guide its reasoning and provide more accurate responses to a wider range of queries.
+ */
+/**
  * One-Shot Prompt Example for wtFAQ (Gemini Integration)
  *
  * System Prompt:
