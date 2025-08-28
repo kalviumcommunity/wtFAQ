@@ -112,7 +112,8 @@ async function getGeminiResponse(prompt) {
       contents: [{ parts: [{ text: prompt }] }],
       temperature: 0.7, // Controls randomness/creativity of output
       top_p: 0.8, // Controls diversity by sampling from the top probability mass
-      top_k: 40 // Controls diversity by sampling from the top K most likely tokens
+      top_k: 40, // Controls diversity by sampling from the top K most likely tokens
+      stop_sequences: ["\nEND"] // Stops generation when the sequence is encountered
     }, {
       headers: {
         'Content-Type': 'application/json'
@@ -121,6 +122,10 @@ async function getGeminiResponse(prompt) {
         key: apiKey
       }
     });
+/**
+ * What is Stop Sequence in LLMs?
+ * Stop sequence is a parameter that tells the model to stop generating text when a specific sequence of characters is encountered. This is useful for controlling output boundaries and preventing unwanted text generation beyond a certain point.
+ */
 /**
  * What is Top K in LLMs?
  * Top K is a parameter that controls diversity in AI-generated responses. The model considers only the top K most likely tokens for each step, making outputs more focused or more creative depending on the value. Higher K allows more possible tokens, increasing diversity.
