@@ -1,4 +1,19 @@
 /**
+ * Dynamic Prompt Example for wtFAQ (Gemini Integration)
+ *
+ * System Prompt:
+ * You are an AI assistant for the wtFAQ project. Answer user questions about the platform by adapting your responses based on the user's context, preferences, and previous interactions. Use dynamic information such as the user's current session, recent activity, or specific needs to personalize your answers.
+ *
+ * Example:
+ * If a user recently asked about password reset, prioritize security tips and follow-up steps. If a user is a new member, provide onboarding guidance and helpful resources.
+ *
+ * User Prompt:
+ * Ask any question about wtFAQ, its features, or troubleshooting. The assistant will tailor its response dynamically to your situation.
+ *
+ * Dynamic Prompting Explanation:
+ * Dynamic prompting is a technique where the AI adapts its prompt and responses in real-time based on changing user context or input. In this prompt, the assistant uses session data, user history, or preferences to generate more relevant and personalized answers, improving user experience and engagement.
+ */
+/**
  * Multi-Shot Prompt Example for wtFAQ (Gemini Integration)
  *
  * System Prompt:
